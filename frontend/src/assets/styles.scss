@@ -1,0 +1,16 @@
+.application--wrap {
+  background-image: url("handmadepaper.png");
+  background-repeat: repeat;
+}
+
+.aqua-bg {
+  background: url(~/static/aquarell.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 0 10vw;
+  -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.application {
+  font-family: 'Montserrat' !important;
+}
+

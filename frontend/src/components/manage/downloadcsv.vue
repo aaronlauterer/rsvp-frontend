@@ -49,8 +49,11 @@ function convertArrayOfObjectsToCSV (args) {
     ctr = 0
     keys.forEach(function (key) {
       if (ctr > 0) result += columnDelimiter
-
-      result += item[key]
+      if (key === 'comment' && typeof (item[key]) === 'string') {
+        result += item[key].replace(/\r?\n/g, "<br>")
+      } else {
+        result += item[key]
+      }
       ctr++
     })
     result += lineDelimiter

@@ -11,6 +11,7 @@
         label="User"></v-text-field>
       <v-text-field
         v-model="pass"
+        type="password"
         required
         label="Password"></v-text-field>
       <v-btn type="submit" color="primary" :disabled="!valid">Login</v-btn>

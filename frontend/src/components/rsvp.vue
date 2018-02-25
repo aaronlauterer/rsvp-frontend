@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container fluid v-if="!notfound">
     <v-layout column align-center>
       <template v-if="invitation.table">
         <v-alert outline color="primary" :value="true">
@@ -73,6 +73,9 @@
         </v-card>
     </v-dialog>
   </v-container>
+  <v-container v-else>
+    Wir konnten keine Einladung mit diesem Code finden.
+  </v-container>
 </template>
 
 <script>
@@ -90,7 +93,8 @@ export default {
       invitation: { guest: [] },
       valid: true,
       loading: false,
-      showCheckDialog: false
+      showCheckDialog: false,
+      notfound: false
     }
   },
   computed: {
@@ -113,6 +117,7 @@ export default {
       this.invitation = JSON.parse(response.data)
     })
     .catch((error) => {
+      this.notfound = true
       console.log(error)
     })
   },

@@ -5,10 +5,12 @@ import manage from '@/components/manage'
 import rsvp from '@/components/rsvp'
 import done from '@/components/done'
 import login from '@/components/login'
+import notfound from '@/components/notfound'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -34,6 +36,10 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login
+    },
+    {
+      path: '*',
+      component: notfound
     }
   ]
 })

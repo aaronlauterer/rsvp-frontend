@@ -4,16 +4,16 @@
       <v-layout column align-center>
         <p>Den Code findest du auf dem Aufkleber.
           </p>
-         <v-form v-model="valid" ref="form" @submit="submit" lazy-validation>
+         <v-form v-model="valid" ref="form" @submit.prevent="submit" lazy-validation>
           <v-text-field
             label="Code"
             v-model="code"
             required
           ></v-text-field>
           <v-btn
-            type="submit"
             :disabled="!valid"
             :loading="loading"
+            type="submit"
           >
             Weiter
           </v-btn>
@@ -56,8 +56,7 @@ export default {
       })
       .then((response) => {
         this.alert = false
-        console.log(response.data)
-        this.$router.push({name: 'rsvp', params: { code }})
+        this.$router.push({name: 'rsvp', params: {code}})
       })
       .catch((error) => {
         if (error.response.status === 404) {

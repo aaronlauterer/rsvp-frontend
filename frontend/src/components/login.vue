@@ -3,7 +3,7 @@
     <h2>Login</h2>
     <v-form v-model="valid"
       ref="form"
-      @submit="submit"
+      @submit.prevent="submit"
       lazy-validation>
       <v-text-field
         v-model="user"

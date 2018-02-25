@@ -16,7 +16,7 @@
           v-model="search"></v-text-field>
       </v-toolbar>
        <v-dialog v-model="dialog" max-width="500px">
-        <v-form v-model="valid" ref="form" @submit="save" lazy-validation>
+        <v-form v-model="valid" ref="form" @submit.prevent="save" lazy-validation>
         <v-card>
           <v-card-title>
             <span class="title">{{ formTitle }}</span>

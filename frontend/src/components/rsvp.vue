@@ -6,7 +6,7 @@
           {{ tableText }}
         </v-alert>
       </template>
-      <v-form v-model="valid" ref="form" @submit="check" lazy-validation>
+      <v-form v-model="valid" ref="form" @submit.prevent="check" lazy-validation>
         <v-radio-group
           v-model="invitation.rsvped"
           >

@@ -122,6 +122,7 @@
         </v-flex>
       </template>
       <statistics :invites="invites"></statistics>
+      <a class="router-link mt-4" @click.prevent="logout" href="#" title="Logout">Logout</a>
     </v-layout>
   </v-container>
 </template>
@@ -328,6 +329,10 @@ export default {
           alert(error.response.data.detail)
         })
       }
+    },
+    logout () {
+      localStorage.removeItem('authToken')
+      this.$router.push({name: 'login'})
     }
   }
 }

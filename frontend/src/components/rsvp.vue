@@ -35,12 +35,14 @@
           autocomplete="tel"
           label="Telefonnummer"
           v-model="invitation.phone"
+          type="tel"
         ></v-text-field>
         <v-text-field
           prepend-icon="email"
           autocomplete="email"
           label="E-Mail"
           v-model="invitation.email"
+          type="email"
         ></v-text-field>
         <h2>Kommentar</h2>
         Falls wir noch etwas wissen müssen.

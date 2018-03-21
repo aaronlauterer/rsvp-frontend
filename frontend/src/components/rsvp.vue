@@ -28,7 +28,7 @@
           v-on:newguest="newguest"
           v-on:deleteguest="deleteguest"
           class="mb-3"></rsvpguests>
-        <h2>Kontakinformationen</h2>
+        <h2>Kontaktinformationen</h2>
         Um euch erreichen zu können.
         <v-text-field
           prepend-icon="phone"
